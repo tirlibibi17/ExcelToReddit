@@ -1,0 +1,49 @@
+---
+---
+
+@import "jekyll-theme-modernist";
+
+// Add customizations
+button {
+  position: fixed;
+  width: 3.6em;
+  height: 3.6em;
+  top: 2em;
+  right: 2em;
+  box-sizing: border-box;
+  z-index: 99;
+  text-align: center;
+  line-height: 1;
+  background-color: #1c90f3;
+  border: 0.2em solid white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+  border-color: #89c9ff;
+}
+
+button svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -12px 0 0 -12px;
+}
+
+@keyframes fading {
+  from {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+button.fading {
+  animation: fading 0.5s;
+  pointer-events: none;
+}
