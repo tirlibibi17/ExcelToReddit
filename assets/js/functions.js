@@ -21,7 +21,7 @@ function copyFormatted (rtjson, html) {
   // container.style.opacity = 0
   //container.style.visibility="hidden"
   
-  
+ 
 
   // Detect all style sheets of the page
   var activeSheets = Array.prototype.slice.call(document.styleSheets)
