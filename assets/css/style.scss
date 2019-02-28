@@ -9,12 +9,29 @@
     max-height: 400px;
 }
 
-button {
+#copy {
 //  position: fixed;
   position: absolute;
   width: 3.6em;
   height: 3.6em;
   top: 2em;
+  right: 2em;
+  box-sizing: border-box;
+  z-index: 99;
+  text-align: center;
+  line-height: 1;
+  background-color: #1c90f3;
+  border: 0.2em solid white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#refresh {
+//  position: fixed;
+  position: absolute;
+  width: 3.6em;
+  height: 3.6em;
+  top: 7em;
   right: 2em;
   box-sizing: border-box;
   z-index: 99;
