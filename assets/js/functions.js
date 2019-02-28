@@ -79,8 +79,10 @@ document.querySelector('button').onclick = function () {
   })
   this.parentNode.appendChild(animatedClone)
   
+  console.log(this.parentNode)
+  
   var contents = window.editor.getData()
-  var div = document.getElementById("copy space")
+  var div = document.getElementById("copy-space")
 //  div.style.visibility="hidden"
 //  document.body.appendChild(div)
   div.innerHTML = contents
