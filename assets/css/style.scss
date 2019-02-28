@@ -18,11 +18,10 @@
 }
 
 #copy {
-//  position: fixed;
   position: absolute;
   width: 3.6em;
   height: 3.6em;
-  top: 2em;
+  top: 6em;
   right: 2em;
   box-sizing: border-box;
   z-index: 99;
@@ -35,12 +34,11 @@
 }
 
 #refresh {
-//  position: fixed;
   position: absolute;
   width: 3.6em;
   height: 3.6em;
   top: 6em;
-  right: 2em;
+  right: 6em;
   box-sizing: border-box;
   z-index: 99;
   text-align: center;
@@ -63,8 +61,8 @@ button svg {
   margin: -12px 0 0 -12px;
 }
 
-/* button svg text {display: none;} */
-/* button svg g:hover text {display: block;}  */
+button svg text {display: none;}
+button svg g:hover text {display: block;}
 
 @keyframes fading {
   from {
