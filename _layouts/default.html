@@ -34,38 +34,35 @@
 
       {{ content }}
 
+      </section>
+    </div>
+
       <!-- Start customization -->
-      <div class="centered">
-        <button id="copy">
-	  <svg fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" >
-            <title>Copy</title>
-	    <g>
-	      <path d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
-          <text x="0" y="30">Copy</text>
-        </g>
-	  </svg>
-	</button>
+    <div class="centered">
+      <button id="copy">
+	<svg fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" >
+          <title>Copy</title>
+	  <g>
+	    <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            <text x="0" y="30">Copy</text>
+          </g>
+        </svg>
+      </button>
 
-    <button id="refresh">
-	  <!-- <svg fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" > -->
-            <!-- <title>Clear</title> -->
-	    <!-- <g> -->
-	      <!-- <path d="M0 0h24v24H0z" fill="none"></path> -->
-		  <!-- <polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path> -->
-          <!-- <text x="0" y="30">Clear</text>  -->
-        <!-- </g> -->
-	  <!-- </svg> -->
-      <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <!-- <polyline points="23 4 23 10 17 10"></polyline> -->
-        <!-- <polyline points="1 20 1 14 7 14"></polyline> -->
-        <!-- <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path> -->
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-		<line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-	</button>
+      <button id="refresh">
+        <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <title>Clear</title>
+	  <g>
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+            <text x="0" y="30">Clear</text>
+	  </g>
+        </svg>
+      </button>
 
-	<div id="editor"></div>
+	
+      <div id="editor"></div>
       </div>
 
       <script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
@@ -76,8 +73,6 @@
 
       <!-- End customization -->
 	      
-      </section>
-    </div>
     <footer>
     {% if site.github.is_project_page %}
       <p>Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
