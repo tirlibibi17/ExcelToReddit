@@ -15,7 +15,7 @@ function copyFormatted (rtjson, html) {
   
   container.appendChild(divToCopy)
   
-  // Hide element
+  // Hide element 
   // container.style.position = 'fixed'
   // container.style.pointerEvents = 'none'
   // container.style.opacity = 0
