@@ -123,7 +123,7 @@ document.querySelector('#refresh').onclick = function () {
   })
   this.parentNode.appendChild(animatedClone)
     
-  var contents = window.editor.innerHTML=""
+  var contents = window.editor.setData("")
 }
 
 
