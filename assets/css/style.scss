@@ -4,6 +4,11 @@
 @import "jekyll-theme-modernist";
 
 // Add customizations
+
+.ck-editor__editable {
+    max-height: 400px;
+}
+
 button {
 //  position: fixed;
   position: absolute;
