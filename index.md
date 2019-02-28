@@ -17,3 +17,4 @@ Copy some Excel cells or an HTML table in the text area below and press the blue
 &#x200B;
 
 &#x200B;
+
