@@ -71,7 +71,7 @@ function copyFormatted (rtjson, html) {
 }
 
 // Create nice animation on copy button click
-document.querySelector('button').onclick = function () {
+document.querySelector('#copy').onclick = function () {
     var animatedClone = this.cloneNode(true)
   animatedClone.classList.add('fading')
   animatedClone.addEventListener('animationend', function () {
@@ -113,6 +113,19 @@ document.querySelector('button').onclick = function () {
 //  alert(contents)
   copyFormatted(result, contents)
 }
+
+// Create nice animation on refresh button click
+document.querySelector('#refresh').onclick = function () {
+  var animatedClone = this.cloneNode(true)
+  animatedClone.classList.add('fading')
+  animatedClone.addEventListener('animationend', function () {
+    animatedClone.parentNode.removeChild(animatedClone)
+  })
+  this.parentNode.appendChild(animatedClone)
+    
+  var contents = window.editor.innerHTML=""
+}
+
 
 ///////////////////// End copy formatted code from https://jsfiddle.net/Loilo/xymhgLjc/4/
 
