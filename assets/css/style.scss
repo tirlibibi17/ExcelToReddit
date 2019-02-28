@@ -38,6 +38,9 @@ button svg {
   margin: -12px 0 0 -12px;
 }
 
+svg text {display: none;}
+svg g:hover text {display: block;}
+
 @keyframes fading {
   from {
     opacity: 1;
