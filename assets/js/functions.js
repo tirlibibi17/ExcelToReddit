@@ -15,35 +15,20 @@ function copyFormatted (rtjson, html) {
   
   container.appendChild(divToCopy)
   
-  // Hide element 
-  // container.style.position = 'fixed'
-  // container.style.pointerEvents = 'none'
-  // container.style.opacity = 0
-  //container.style.visibility="hidden"
-  
- 
-
   // Detect all style sheets of the page
   var activeSheets = Array.prototype.slice.call(document.styleSheets)
     .filter(function (sheet) {
       return !sheet.disabled
   })
 
-  // Mount the iframe to the DOM to make `contentWindow` available
-//  document.body.appendChild(parentcontainer)
-//  parentcontainer.appendChild(container)
-
   // Copy to clipboard
   window.getSelection().removeAllRanges()
   
   var range = document.createRange()
-  range.selectNode(container)
+  range.selectNode(divToCopy)
 //  range.selectNodeContents(container.childNodes[0])
   
-//  console.log(container.childNodes[0])
   window.getSelection().addRange(range)
-
-//  console.log(range)
 
   try {
     var successful = document.execCommand('copy');
@@ -63,16 +48,12 @@ function copyFormatted (rtjson, html) {
     console.log('Oops, unable to copy');
   }
 
-
   for (var i = 0; i < activeSheets.length; i++) activeSheets[i].disabled = false
-  
-  // Remove the iframe
-//  document.body.removeChild(container)
 }
 
 // Create nice animation on copy button click
 document.querySelector('#copy').onclick = function () {
-    var animatedClone = this.cloneNode(true)
+  var animatedClone = this.cloneNode(true)
   animatedClone.classList.add('fading')
   animatedClone.addEventListener('animationend', function () {
       animatedClone.parentNode.removeChild(animatedClone)
@@ -83,8 +64,7 @@ document.querySelector('#copy').onclick = function () {
   
   var contents = window.editor.getData()
   var div = document.getElementById("copy-space")
-//  div.style.visibility="hidden"
-//  document.body.appendChild(div)
+
   div.innerHTML = contents
   
   table = div.getElementsByTagName("table")[0]
@@ -94,23 +74,10 @@ document.querySelector('#copy').onclick = function () {
 	  return 
   }
 
-  
-  
-//  result = '<div data-reddit-rtjson="' + tableToJson(table).replace('"', '&quot;') + '"></div>'
   result = tableToJson(table)    //.replace('"', '&quot;')
-  
-  //console.log(result)
   
   contents = "<table>" + table.innerHTML + "</table>" 
 
-
-  
-// Remove the div with the table
-//  div.parentNode.removeChild(div);
-  
-  // Do the copy!
-//  console.log(result)
-//  alert(contents)
   copyFormatted(result, contents)
 }
 
@@ -125,7 +92,6 @@ document.querySelector('#refresh').onclick = function () {
     
   var contents = window.editor.setData("")
 }
-
 
 ///////////////////// End copy formatted code from https://jsfiddle.net/Loilo/xymhgLjc/4/
 
