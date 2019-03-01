@@ -22,9 +22,9 @@
   position: absolute;
   width: 3.6em;
   height: 3.6em;
-  top: -1.8em;
+  top: -0.6em;
 //  right: 2em;		// copy to the far right
-  right: 4.2em;		// copy to the left
+  right: 0.8em;		// copy to the left
   box-sizing: border-box;
   z-index: 99;
   text-align: center;
@@ -40,9 +40,9 @@
   width: 1.8em;
   height: 1.8em;
 //  top: -0.9em; 	// middle aligned with copy
-  top: 1.1em;		// upper right hand corner of text area
+  top: 3.1em;		// upper right hand corner of text area
 //  right: 6em;		// copy to the far right
-  right: 2em;		// copy to the left
+  right: 1.7em;		// below copy
   box-sizing: border-box;
   z-index: 99;
   text-align: center;
@@ -93,4 +93,12 @@ button.fading {
 
 #editor-section {
 	border-top: none;
+}
+
+p, ul, ol, table, pre, dl {
+    margin: 0 0 0px;
+}
+
+section {
+    padding: 10px 20px;
 }
