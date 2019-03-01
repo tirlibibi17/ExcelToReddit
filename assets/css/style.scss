@@ -35,9 +35,9 @@
 
 #refresh {
   position: absolute;
-  width: 3.6em;
-  height: 3.6em;
-  top: -1.8em;
+  width: 1.8em;
+  height: 1.8em;
+  top: -0.9em;
   right: 6em;
   box-sizing: border-box;
   z-index: 99;
@@ -54,11 +54,18 @@ button:focus {
   border-color: #89c9ff;
 }
 
-button svg {
+#copy {
   position: absolute;
   left: 50%;
   top: 50%;
   margin: -12px 0 0 -12px;
+}
+
+#refresh {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -6px 0 0 -6px;
 }
 
 button svg text {display: none;}
