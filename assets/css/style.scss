@@ -39,14 +39,15 @@
   position: absolute;
   width: 1.8em;
   height: 1.8em;
-  top: -0.9em;
+//  top: -0.9em; 	// middle aligned with copy
+  top: 0.9em;		// upper right hand corner of text area
 //  right: 6em;		// copy to the far right
   right: 2em;		// copy to the left
   box-sizing: border-box;
   z-index: 99;
   text-align: center;
   line-height: 1;
-  background-color: #d9d9d9;
+  background-color: #dedede;
   border: 0.2em solid white;
   border-radius: 50%;
   cursor: pointer;
@@ -88,4 +89,8 @@ button svg g:hover text {display: block;}
 button.fading {
   animation: fading 0.5s;
   pointer-events: none;
+}
+
+#editor-section {
+	border-top: none;
 }
