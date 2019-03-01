@@ -13,7 +13,7 @@ function copyFormatted (rtjson, html) {
   
   divToCopy.innerHTML = html
   
-  container.appendChild(divToCopy)
+  container.appendChild(container)
   
   // Detect all style sheets of the page
   var activeSheets = Array.prototype.slice.call(document.styleSheets)
