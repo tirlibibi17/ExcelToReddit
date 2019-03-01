@@ -1,0 +1,7 @@
+update local copy from production site: 
+    git fetch upstream
+    git pull upstream master
+
+Push changes from staging site to production site:
+    git push upstream master
+    
