@@ -25,7 +25,7 @@ function copyFormatted (rtjson, html) {
   window.getSelection().removeAllRanges()
   
   var range = document.createRange()
-  range.selectNode(container)
+  range.selectNode(divToCopy)
 //  range.selectNodeContents(container.childNodes[0])
   
   window.getSelection().addRange(range)
