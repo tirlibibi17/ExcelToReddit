@@ -6,7 +6,7 @@
 function copyFormatted (rtjson, html) {
   // Create an iframe (isolated container) for the HTML
   var container = document.getElementById("container")
-  container.innerHTML=""
+  container.innerHTML="container"
   var divToCopy = document.createElement('div')
   
   divToCopy.setAttribute("data-reddit-rtjson", rtjson)
