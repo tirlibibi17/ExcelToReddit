@@ -6,7 +6,7 @@
 function copyFormatted (rtjson, html) {
   // Create an iframe (isolated container) for the HTML
   var container = document.getElementById("container")
-  container.innerHTML="container"
+  container.innerHTML=""
   var divToCopy = document.createElement('div')
   
   divToCopy.setAttribute("data-reddit-rtjson", rtjson)
@@ -25,7 +25,7 @@ function copyFormatted (rtjson, html) {
   window.getSelection().removeAllRanges()
   
   var range = document.createRange()
-  range.selectNode(divToCopy)
+  range.selectNode(container)
 //  range.selectNodeContents(container.childNodes[0])
   
   window.getSelection().addRange(range)
