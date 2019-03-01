@@ -60,8 +60,6 @@ document.querySelector('#copy').onclick = function () {
   })
   this.parentNode.appendChild(animatedClone)
   
-  console.log(this.parentNode)
-  
   var contents = window.editor.getData()
   var div = document.getElementById("copy-space")
 
