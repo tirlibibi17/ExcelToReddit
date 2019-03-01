@@ -7,4 +7,6 @@ Notes:
 * Tested on Windows Chrome, Firefox, and Edge
 * Internet Explorer **is not supported** (ckeditor 5 [issue #330](https://github.com/ckeditor/ckeditor5/issues/330))
 
+&nbsp;
+
 For any suggestions, issues, feel free to DM me on Reddit: [u/tirlibibi17](http://www.reddit.com/message/compose/?to=tirlibibi17)
