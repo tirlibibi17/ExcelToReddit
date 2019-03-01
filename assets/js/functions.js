@@ -10,6 +10,7 @@ function copyFormatted (rtjson, html) {
   var divToCopy = document.createElement('div')
   
   divToCopy.setAttribute("data-reddit-rtjson", rtjson)
+  container.setAttribute("data-reddit-rtjson", rtjson)
   
   divToCopy.innerHTML = html
   
@@ -25,7 +26,7 @@ function copyFormatted (rtjson, html) {
   window.getSelection().removeAllRanges()
   
   var range = document.createRange()
-  range.selectNode(divToCopy)
+  range.selectNode(container)
 //  range.selectNodeContents(container.childNodes[0])
   
   window.getSelection().addRange(range)
