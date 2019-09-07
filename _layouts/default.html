@@ -7,6 +7,8 @@
 {% seo %}
 
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ '/gdpr-cookie-notice/dist/style.css' | append: site.github.build_revision | relative_url }}">	
+	
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
@@ -66,7 +68,12 @@
     </div>
 
       <script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
+
+	  <!-- GDPR notice from https://github.com/passatgt/gdpr-cookie-notice -->
+      <script src="{{ '/gdpr-cookie-notice/dist/script.js' | relative_url }}"></script>
+
       <script src="{{ '/assets/js/functions.js' | relative_url }}"></script>
+
 
       <div id="copy-space">copy-space</div>
       <div id="container">container</div>
