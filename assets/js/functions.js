@@ -60,7 +60,7 @@ function copyFormatted (rtjson, html) {
 
 document.addEventListener('copy', function (e){
 	var textString = 'This is plain text';
-	var htmlString = `<p>${textString}
+	var htmlString = `<p>This is <B>HTML</B>&nbsp;
 		new line here</p><p>new paragraph</p>`;
 	var clipboardDataEvt = e.clipboardData;
 	clipboardDataEvt.setData('text/plain', textString);
