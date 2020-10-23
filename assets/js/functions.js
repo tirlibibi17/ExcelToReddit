@@ -150,7 +150,7 @@ ClassicEditor
 
 
 // Initialize GDPR cookie warning
-gdprCookieNotice({
+/*gdprCookieNotice({
   locale: 'en', //This is the default value
   timeout: 500, //Time until the cookie bar appears
   expiration: 30, //This is the default value, in days
@@ -161,3 +161,4 @@ gdprCookieNotice({
   analytics: ['ga'], //Cookies in the analytics category.
 //  marketing: ['SSID'] //Cookies in the marketing category.
 });
+*/
