@@ -54,6 +54,18 @@ function copyFormatted (rtjson, html) {
   }
 
   for (var i = 0; i < activeSheets.length; i++) activeSheets[i].disabled = false
+  setClipboard("Testing, 1, 2, 3")
+}
+
+function setClipboard(text) {
+  let data = new DataTransfer();
+
+  data.items.add(text, "text/plain");
+  navigator.clipboard.write(data).then(function() {
+    /* success */
+  }, function() {
+    /* failure */
+  });
 }
 
 // Create nice animation on copy button click
