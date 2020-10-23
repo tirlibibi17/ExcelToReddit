@@ -58,15 +58,15 @@ function copyFormatted (rtjson, html) {
 }
 
 function setClipboard(text) {
-  let data = new DataTransfer();
+	let data = new DataTransfer();
 
-  data.items.add(text, "text/plain");
-  navigator.clipboard.write(data).then(function() {
-    alert("Success")
-  }, function() {
-    alert("Failure")
-    /* failure */
-  });
+	data.items.add(text, "text/plain");
+	try {
+		await navigator.clipboard.write(data)
+		alert('Text copied.');
+	} catch (err) {
+		console.error(err.name, err.message);
+	}	
 }
 
 function setClipboardHTML(text) {
