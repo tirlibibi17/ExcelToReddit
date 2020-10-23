@@ -57,7 +57,7 @@ function copyFormatted (rtjson, html) {
   setClipboard("Testing, 1, 2, 3")
 }
 
-function setClipboard(text) {
+async function setClipboard(text) {
 	let data = new DataTransfer();
 
 	data.items.add(text, "text/plain");
