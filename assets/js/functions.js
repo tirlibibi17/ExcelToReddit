@@ -35,7 +35,7 @@ function copyFormatted (rtjson, html) {
   
   window.getSelection().addRange(range)
 
-  try {
+/*  try {
     var successful = document.execCommand('copy');
     var msg = successful ? 'successful' : 'unsuccessful';
     console.log('Copy command 1 was ' + msg + " code = " + successful);
@@ -53,7 +53,7 @@ function copyFormatted (rtjson, html) {
     console.log('Oops, unable to copy');
   }
 
-  for (var i = 0; i < activeSheets.length; i++) activeSheets[i].disabled = false
+  for (var i = 0; i < activeSheets.length; i++) activeSheets[i].disabled = false*/
   setClipboard("Testing, 1, 2, 3")
 }
 
@@ -67,6 +67,19 @@ function setClipboard(text) {
     /* failure */
   });
 }
+
+function setClipboard(text) {
+  let data = new DataTransfer();
+
+  data.items.add(text, "text/plain");
+  navigator.clipboard.write(data).then(function() {
+    /* success */
+  }, function() {
+    /* failure */
+  });
+}
+
+
 
 // Create nice animation on copy button click
 document.querySelector('#copy').onclick = function () {
