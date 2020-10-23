@@ -65,7 +65,8 @@ document.addEventListener('copy', function (e){
 	var clipboardDataEvt = e.clipboardData;
 	clipboardDataEvt.setData('text/plain', textString);
 	clipboardDataEvt.setData('text/html', htmlString);
-	console.log("haha")
+	e.preventDefault();
+	console.log("haha");
 });
 
 async function setClipboard(text) {
