@@ -35,7 +35,7 @@ function copyFormatted (rtjson, html) {
   
   window.getSelection().addRange(range)
 
-/*  try {
+  try {
     var successful = document.execCommand('copy');
     var msg = successful ? 'successful' : 'unsuccessful';
     console.log('Copy command 1 was ' + msg + " code = " + successful);
@@ -53,9 +53,20 @@ function copyFormatted (rtjson, html) {
     console.log('Oops, unable to copy');
   }
 
-  for (var i = 0; i < activeSheets.length; i++) activeSheets[i].disabled = false*/
-  setClipboard("Testing, 1, 2, 3")
+  for (var i = 0; i < activeSheets.length; i++) activeSheets[i].disabled = false
+//  setClipboard("Testing, 1, 2, 3")
 }
+
+
+document.addEventListener('copy', function (e){
+	var textString = 'This is plain text';
+	var htmlString = `<p>${textString}
+		new line here</p><p>new paragraph</p>`;
+	var clipboardDataEvt = e.clipboardData;
+	clipboardDataEvt.setData('text/plain', textString);
+	clipboardDataEvt.setData('text/html', htmlString);
+	console.log("haha")
+});
 
 async function setClipboard(text) {
 	let data = new DataTransfer();
