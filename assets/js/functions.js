@@ -62,8 +62,9 @@ function setClipboard(text) {
 
   data.items.add(text, "text/plain");
   navigator.clipboard.write(data).then(function() {
-    /* success */
+    alert("Success")
   }, function() {
+    alert("Failure")
     /* failure */
   });
 }
