@@ -69,7 +69,7 @@ function setClipboard(text) {
   });
 }
 
-function setClipboard(text) {
+function setClipboardHTML(text) {
   let data = new DataTransfer();
 
   data.items.add(text, "text/plain");
