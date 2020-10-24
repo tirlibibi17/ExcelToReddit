@@ -58,14 +58,14 @@ function copyFormatted (rtjson, html) {
 
 document.addEventListener('copy', function (e){
 	var textString = 'This is plain text';
-  var clipboardDataEvt = e.clipboardData;
-  var htmlString = clipboardDataEvt.items.DataTransferItem(0);
+  var data = e.clipboardData;
+  var htmlString = data.items[0];
 
   console.log("HTML = " + htmlString);
   
 
-	clipboardDataEvt.setData('text/plain', textString);
-	clipboardDataEvt.setData('text/html', htmlString);
+	data.setData('text/plain', textString);
+//	data.setData('text/html', htmlString);
 	e.preventDefault();
 	console.log("haha");
 });
