@@ -64,42 +64,6 @@ function copyFormatted (rtjson, html) {
   for (var i = 0; i < activeSheets.length; i++) activeSheets[i].disabled = false
 }
 
-document.addEventListener('copy', function (e){
-	var textString = 'This is plain text';
-  var data = e.clipboardData;
-  var htmlString = document.getElementById("CopyDIV").innerHTML;
-
-  console.log("HTML = " + htmlString);
-
-  data.setData('text/plain', textString);
-	data.setData('text/html', htmlString);
-	e.preventDefault();
-});
-
-async function setClipboard(text) {
-	let data = new DataTransfer();
-
-	data.items.add(text, "text/plain");
-	try {
-		await navigator.clipboard.write(data)
-		alert('Text copied.');
-	} catch (err) {
-		console.error(err.name, err.message);
-	}	
-}
-
-function setClipboardHTML(text) {
-  let data = new DataTransfer();
-
-  data.items.add(text, "text/plain");
-  navigator.clipboard.write(data).then(function() {
-    /* success */
-  }, function() {
-    /* failure */
-  });
-}
-
-
 
 // Create nice animation on copy button click
 document.querySelector('#copy').onclick = function () {
@@ -142,6 +106,27 @@ document.querySelector('#refresh').onclick = function () {
 }
 
 ///////////////////// End copy formatted code from https://jsfiddle.net/Loilo/xymhgLjc/4/
+
+
+document.addEventListener('copy', function (e){
+	var textString = 'This is plain text';
+  var data = e.clipboardData;
+  var copyDIV = document.getElementById("CopyDIV");
+  var htmlString = copyDIV.innerHTML;
+
+//  console.log("HTML = " + htmlString);
+  for (var i=0;i<copyDIV.childElementCount;i++) {
+    console.log(copyDIV.childNodes[i].innerHTML)
+  }
+
+  data.setData('text/plain', textString);
+	data.setData('text/html', htmlString);
+	e.preventDefault();
+});
+
+
+
+
 
 function tableToJson(table) { 
 	var blocks = []; 
