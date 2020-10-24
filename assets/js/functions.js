@@ -9,10 +9,18 @@
 // It expects an HTML string to copy as rich text.
 
 function copyFormatted (rtjson, html) {
+  // Remove CopyDIV if it exists
+  try {
+    document.getElementById("CopyDIV").remove()
+  } catch (error) {
+    // do nothing
+  }
+
   // Create an iframe (isolated container) for the HTML
   var container = document.getElementById("container")
   container.innerHTML="container"
   var divToCopy = document.createElement('div')
+  divToCopy.id = "CopyDIV"
   
   divToCopy.setAttribute("data-reddit-rtjson", rtjson)
   
@@ -59,15 +67,13 @@ function copyFormatted (rtjson, html) {
 document.addEventListener('copy', function (e){
 	var textString = 'This is plain text';
   var data = e.clipboardData;
-  var htmlString = data.items[0];
+  var htmlString = document.getElementById("CopyDIV").innerHTML;
 
   console.log("HTML = " + htmlString);
-  
 
-	data.setData('text/plain', textString);
-//	data.setData('text/html', htmlString);
+  data.setData('text/plain', textString);
+	data.setData('text/html', htmlString);
 	e.preventDefault();
-	console.log("haha");
 });
 
 async function setClipboard(text) {
