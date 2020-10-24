@@ -54,15 +54,16 @@ function copyFormatted (rtjson, html) {
   }
 
   for (var i = 0; i < activeSheets.length; i++) activeSheets[i].disabled = false
-//  setClipboard("Testing, 1, 2, 3")
 }
-
 
 document.addEventListener('copy', function (e){
 	var textString = 'This is plain text';
-	var htmlString = `<p>This is <B>HTML</B>&nbsp;
-		new line here</p><p>new paragraph</p>`;
-	var clipboardDataEvt = e.clipboardData;
+  var clipboardDataEvt = e.clipboardData;
+  var htmlString = clipboardDataEvt.items.DataTransferItem(0);
+
+  console.log("HTML = " + htmlString);
+  
+
 	clipboardDataEvt.setData('text/plain', textString);
 	clipboardDataEvt.setData('text/html', htmlString);
 	e.preventDefault();
