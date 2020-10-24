@@ -112,10 +112,10 @@ document.addEventListener('copy', function (e){
   var textString = '';
   var data = e.clipboardData;
   var copyDIV = document.getElementById("CopyDIV");
-  var htmlString = copyDIV.innerHTML;
+  var htmlString = copyDIV.parentNode.innerHTML;
   var trList = copyDIV.childNodes[0].childNodes[0];
 
-  for (var i=0;i.trList.childElementCount;i++) {
+  for (var i=0;i<trList.childElementCount;i++) {
     var formatting = '';
     for (var j=0;j<trList.childNodes[i].childElementCount;j++) {
       console.log("(" + i + ", "+ j + ") => " + trList.childNodes[i].childNodes[j].innerText)
