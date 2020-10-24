@@ -109,16 +109,22 @@ document.querySelector('#refresh').onclick = function () {
 
 
 document.addEventListener('copy', function (e){
-  var textString = 'This is plain text';
+  var textString = '';
   var data = e.clipboardData;
   var copyDIV = document.getElementById("CopyDIV");
   var htmlString = copyDIV.innerHTML;
   var trList = copyDIV.childNodes[0].childNodes[0];
 
-//  console.log("HTML = " + htmlString);
-  for (var i=0;i<copyDIV.trList.childElementCount;i++) {
+  for (var i=0;i.trList.childElementCount;i++) {
+    var formatting = '';
     for (var j=0;j<trList.childNodes[i].childElementCount;j++) {
       console.log("(" + i + ", "+ j + ") => " + trList.childNodes[i].childNodes[j].innerText)
+      textString += '|' + trList.childNodes[i].childNodes[j].innerText;
+      formatting += ':--:|';
+    }
+    textString += '|\n';
+    if (i==0) {
+      textString += formatting + '\n';
     }
   }
 
