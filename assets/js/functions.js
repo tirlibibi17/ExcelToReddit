@@ -108,6 +108,9 @@ document.querySelector('#refresh').onclick = function () {
 ///////////////////// End copy formatted code from https://jsfiddle.net/Loilo/xymhgLjc/4/
 
 
+// The code triggers when a copy event fires
+// This is needed to be able to call the setData method
+
 document.addEventListener('copy', function (e){
   var textString = '';
   var data = e.clipboardData;
@@ -120,11 +123,11 @@ document.addEventListener('copy', function (e){
     for (var j=0;j<trList.childNodes[i].childElementCount;j++) {
       console.log("(" + i + ", "+ j + ") => " + trList.childNodes[i].childNodes[j].innerText)
       textString += '|' + trList.childNodes[i].childNodes[j].innerText;
-      formatting += ':--:|';
+      formatting += '|:-';  // align left
     }
     textString += '|\n';
     if (i==0) {
-      textString += formatting + '\n';
+      textString += formatting + '|\n';
     }
   }
 
