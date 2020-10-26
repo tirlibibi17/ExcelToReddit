@@ -123,7 +123,7 @@ document.addEventListener('copy', function (e){
     for (var j=0;j<trList.childNodes[i].childElementCount;j++) {
       console.log("(" + i + ", "+ j + ") => " + trList.childNodes[i].childNodes[j].innerText);
       // get innerText and escape characters that can be interpreted as MarkDown
-      textString += '|' + trList.childNodes[i].childNodes[j].innerText.replace(/([\[\]\(\*\^\`\~])/g, '\$1');
+      textString += '|' + trList.childNodes[i].childNodes[j].innerText.replace(/([\[\]\*\^\`\~])/g, '\\$1');
       formatting += '|:-';  // align left
     }
     textString += '|\n';
