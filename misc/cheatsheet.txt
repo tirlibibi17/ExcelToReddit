@@ -1,3 +1,6 @@
+add remote upstream repo (from ExcelToReddit-staging / see https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork)
+    git remote add upstream https://github.com/tirlibibi17/ExcelToReddit.git
+
 update local copy from production site: 
     git fetch upstream
     git pull upstream master
