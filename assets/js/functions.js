@@ -132,6 +132,8 @@ document.addEventListener('copy', function (e){
     }
   }
 
+  textString += '\n^Table ^formatting ^brought ^to ^you ^by ^[ExcelToReddit](https://xl2reddit.github.io/)\n'
+
   data.setData('text/plain', textString);
   data.setData('text/html', htmlString);
   e.preventDefault();
