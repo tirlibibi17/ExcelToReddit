@@ -155,7 +155,7 @@ function tableToJson(table) {
 		for (var j=0; j<colCount; j++) { 
 			var text = tableRow.cells[j].innerText 
 			var key = Math.random().toString(36).substring(2, 7)	// generate a 5 character random key
-/*			block = {
+  		block = {
 				"key": key,
 				"text": text,
 				"type": "table-cell",
@@ -168,96 +168,77 @@ function tableToJson(table) {
 					"rowIndex": i
 				}
       }
-*/
-      
-      block = {
-        "entityMap": {
-            "0": {
-                "type": "LINK",
-                "mutability": "MUTABLE",
-                "data": {
-                    "url": "https://xl2reddit.github.io/"
-                }
-            }
-        },
-        "blocks": [{
-                "key": key,
-                "text": text,
-                "type": "table-cell",
-                "inlineStyleRanges": [],
-                "entityRanges": [],
-                "data": {
-                    "alignment": "L",
-                    "colCount": 2,
-                    "colIndex": 0,
-                    "rowIndex": 0
-                }
-            }, {
-                "key": "bm8he",
-                "text": "Â ",
-                "type": "table-cell",
-                "inlineStyleRanges": [],
-                "entityRanges": [],
-                "data": {
-                    "alignment": "L",
-                    "colCount": 2,
-                    "colIndex": 1,
-                    "rowIndex": 0
-                }
-            }, {
-                "key": "ei81j",
-                "text": "Table formatting brought to you by ExcelToReddit",
-                "type": "unstyled",
-                "inlineStyleRanges": [{
-                        "offset": 0,
-                        "length": 5,
-                        "style": "SUPERSCRIPT"
-                    }, {
-                        "offset": 6,
-                        "length": 10,
-                        "style": "SUPERSCRIPT"
-                    }, {
-                        "offset": 17,
-                        "length": 7,
-                        "style": "SUPERSCRIPT"
-                    }, {
-                        "offset": 25,
-                        "length": 2,
-                        "style": "SUPERSCRIPT"
-                    }, {
-                        "offset": 28,
-                        "length": 3,
-                        "style": "SUPERSCRIPT"
-                    }, {
-                        "offset": 32,
-                        "length": 2,
-                        "style": "SUPERSCRIPT"
-                    }, {
-                        "offset": 35,
-                        "length": 13,
-                        "style": "SUPERSCRIPT"
-                    }
-                ],
-                "entityRanges": [{
-                        "offset": 35,
-                        "length": 13,
-                        "key": 0
-                    }
-                ],
-                "data": {}
-            }
-        ]
-    }
     
 			blocks.push(block)
 		} 
 	} 
-	
-	var fullObject = {
+  
+  blocks.push({
+    "key": "ei81j",
+    "text": "Table formatting brought to you by ExcelToReddit",
+    "type": "unstyled",
+    "inlineStyleRanges": [{
+            "offset": 0,
+            "length": 5,
+            "style": "SUPERSCRIPT"
+        }, {
+            "offset": 6,
+            "length": 10,
+            "style": "SUPERSCRIPT"
+        }, {
+            "offset": 17,
+            "length": 7,
+            "style": "SUPERSCRIPT"
+        }, {
+            "offset": 25,
+            "length": 2,
+            "style": "SUPERSCRIPT"
+        }, {
+            "offset": 28,
+            "length": 3,
+            "style": "SUPERSCRIPT"
+        }, {
+            "offset": 32,
+            "length": 2,
+            "style": "SUPERSCRIPT"
+        }, {
+            "offset": 35,
+            "length": 13,
+            "style": "SUPERSCRIPT"
+        }
+    ],
+    "entityRanges": [{
+            "offset": 35,
+            "length": 13,
+            "key": 0
+        }
+    ],
+    "data": {}
+})
+  
+
+/* 	var fullObject = {
 		"entityMap": {},
 		"blocks": blocks
   }
+ */
   
+ 	var fullObject = {
+		"entityMap": {
+      "0": {
+          "type": "LINK",
+          "mutability": "MUTABLE",
+          "data": {
+              "url": "https://xl2reddit.github.io/"
+          }
+      }
+    },
+		"blocks": blocks
+  }
+ 
+
+
+
   console.log(JSON.stringify(fullObject))
 	
 	return JSON.stringify(fullObject)
