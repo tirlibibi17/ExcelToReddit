@@ -134,8 +134,10 @@ document.addEventListener('copy', function (e){
 
   textString += '\n^Table ^formatting ^brought ^to ^you ^by ^[ExcelToReddit](https://xl2reddit.github.io/)\n'
 
+  var htmlFooter ='<div class="" data-block="true" data-editor="037dd9" data-offset-key="79scj-0-0"><div data-offset-key="79scj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="79scj-0-0" style="position: relative; top: -0.4em; font-size: 0.7em; line-height: 0.7em;"><span data-text="true">Table</span></span><span data-offset-key="79scj-0-1"><span data-text="true"> </span></span><span data-offset-key="79scj-0-2" style="position: relative; top: -0.4em; font-size: 0.7em; line-height: 0.7em;"><span data-text="true">formatting</span></span><span data-offset-key="79scj-0-3"><span data-text="true"> </span></span><span data-offset-key="79scj-0-4" style="position: relative; top: -0.4em; font-size: 0.7em; line-height: 0.7em;"><span data-text="true">brought</span></span><span data-offset-key="79scj-0-5"><span data-text="true"> </span></span><span data-offset-key="79scj-0-6" style="position: relative; top: -0.4em; font-size: 0.7em; line-height: 0.7em;"><span data-text="true">to</span></span><span data-offset-key="79scj-0-7"><span data-text="true"> </span></span><span data-offset-key="79scj-0-8" style="position: relative; top: -0.4em; font-size: 0.7em; line-height: 0.7em;"><span data-text="true">you</span></span><span data-offset-key="79scj-0-9"><span data-text="true"> </span></span><span data-offset-key="79scj-0-10" style="position: relative; top: -0.4em; font-size: 0.7em; line-height: 0.7em;"><span data-text="true">by</span></span><span data-offset-key="79scj-0-11"><span data-text="true"> </span></span><span><a href="https://xl2reddit.github.io/" class="_1FRfMxEAy__7c8vezYv9qP"><span data-offset-key="79scj-1-0" style="position: relative; top: -0.4em; font-size: 0.7em; line-height: 0.7em;"><span data-text="true">ExcelToReddit</span></span></a></span></div></div>'
+
   data.setData('text/plain', textString);
-  data.setData('text/html', htmlString);
+  data.setData('text/html', htmlString + htmlFooter);
   e.preventDefault();
 });
 
