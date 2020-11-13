@@ -216,15 +216,8 @@ function tableToJson(table) {
         }
     ],
     "data": {}
-})
-  
-
-/* 	var fullObject = {
-		"entityMap": {},
-		"blocks": blocks
-  }
- */
-  
+  })
+    
  	var fullObject = {
 		"entityMap": {
       "0": {
@@ -237,12 +230,7 @@ function tableToJson(table) {
     },
 		"blocks": blocks
   }
- 
-
-
-
-  console.log(JSON.stringify(fullObject))
-	
+ 	
 	return JSON.stringify(fullObject)
 }
 
