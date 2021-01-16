@@ -1,8 +1,3 @@
-
-
-
-
-
 ////////////////////////////////// Copy formatted code adapted from https://jsfiddle.net/Loilo/xymhgLjc/4/
 
 // This is the actual copy function.
@@ -122,11 +117,11 @@ document.addEventListener('copy', function (e){
   for (var i=0;i<trList.childElementCount;i++) {
     // Insert row number column
     var x = trList.childNodes[i].insertCell(0);
-    x.innerHTML=i
+    x.innerHTML=i+1
 
     var formatting = '';
     for (var j=0;j<trList.childNodes[i].childElementCount;j++) {
-      console.log("(" + i + ", "+ j + ") => " + trList.childNodes[i].childNodes[j].innerText);
+      // console.log("(" + i + ", "+ j + ") => " + trList.childNodes[i].childNodes[j].innerText);
       // get innerText and escape characters that can be interpreted as MarkDown
       textString += '|' + trList.childNodes[i].childNodes[j].innerText.replace(/([\[\]\*\^\`\~])/g, '\\$1');
       formatting += '|:-';  // align left
