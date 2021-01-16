@@ -117,7 +117,7 @@ document.addEventListener('copy', function (e){
   for (var i=0;i<trList.childElementCount;i++) {
     // Insert row number column
     var x = trList.childNodes[i].insertCell(0);
-    x.innerHTML=i+1
+    //x.innerHTML=i+1
 
     var formatting = '';
     for (var j=0;j<trList.childNodes[i].childElementCount;j++) {
