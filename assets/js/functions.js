@@ -83,12 +83,21 @@ document.querySelector('#copy').onclick = function () {
 	  return 
   }
 
-  for (var i=0;i<table.childElementCount;i++) {
-    // Insert row number column
-    var x = trList.childNodes[i].insertCell(0);
-    x.innerText=i+1
+  // insert columns
+  var numCols = table.childNodes[0].childNodes[0].childElementCount;
+  var row = table.insertRow(0);
+  row.innerHTML=""
+
+  for (var i=0;i<numCols;i++) {
+      console.log(i)
+      row.innerHTML+="<td><b>"+String.fromCharCode(65+i)+"</b></td>"
   }
 
+  for (var i=0;i<table.childNodes[0].childElementCount;i++) {
+    // Insert row number column
+    var x = table.childNodes[0].childNodes[i].insertCell(0);
+    x.innerHTML=(i==0)?" ":"<b>" + i + "</b>"
+  }
 
 
 
