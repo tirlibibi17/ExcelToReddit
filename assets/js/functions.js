@@ -1,5 +1,7 @@
 ////////////////////////////////// Copy formatted code adapted from https://jsfiddle.net/Loilo/xymhgLjc/4/
 
+// Sequence: document.querySelector('#copy').onclick, copyFormatted, document.addEventListener('copy'
+
 // This is the actual copy function.
 // It expects an HTML string to copy as rich text.
 
@@ -81,6 +83,15 @@ document.querySelector('#copy').onclick = function () {
 	  return 
   }
 
+  for (var i=0;i<table.childElementCount;i++) {
+    // Insert row number column
+    var x = trList.childNodes[i].insertCell(0);
+    x.innerText=i+1
+  }
+
+
+
+
   result = tableToJson(table)    //.replace('"', '&quot;')
   
   contents = "<table>" + table.innerHTML + "</table>" 
@@ -116,8 +127,8 @@ document.addEventListener('copy', function (e){
 
   for (var i=0;i<trList.childElementCount;i++) {
     // Insert row number column
-    var x = trList.childNodes[i].insertCell(0);
-    //x.innerHTML=i+1
+//    var x = trList.childNodes[i].insertCell(0);
+//    x.innerText=i+1
 
     var formatting = '';
     for (var j=0;j<trList.childNodes[i].childElementCount;j++) {
