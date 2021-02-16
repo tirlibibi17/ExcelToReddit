@@ -87,26 +87,28 @@ document.querySelector('#copy').onclick = function () {
   }
 
   if (document.getElementById("rowsAndColumns").checked) {
-	  // insert columns
-	  var numCols = table.childNodes[0].childNodes[0].childElementCount;
-	  var row = table.insertRow(0);
-	  row.innerHTML=""
-
-    upperLeftCell = 'A1'.toUpperCase();
-    column = upperLeftCell.match(/[A-Z]+/);
-    columnIndex = columnLetters.indexOf(column);
-
-	  for (var i=0;i<numCols;i++) {
-		  console.log(i)
-		  row.innerHTML+="<td><b>"+columnLetters[columnIndex + i]+"</b></td>"
-	  }
-
-	  for (var i=0;i<table.childNodes[0].childElementCount;i++) {
-		// Insert row number column
-		var x = table.childNodes[0].childNodes[i].insertCell(0);
-		x.innerHTML=(i==0)?" ":"<b>" + i + "</b>"
-	  }
+    // insert columns
+    var numCols = table.childNodes[0].childNodes[0].childElementCount;
+    var row = table.insertRow(0);
+    row.innerHTML=""
+  
+    upperLeftCell = document.getElementById("cellAddress").value.toUpperCase();
+    startColumn = upperLeftCell.match(/[A-Z]+/);
+    startColumnIndex = columnLetters.indexOf(startColumn[0]);
+    startRow = upperLeftCell.match(/[0-9]+/)[0]*1
+  
+    for (var i=0;i<numCols;i++) {
+      console.log(i)
+      row.innerHTML+="<td><b>"+columnLetters[columnIndex + i]+"</b></td>"
+    }
+  
+    for (var i=0;i<table.childNodes[0].childElementCount;i++) {
+      // Insert row number column
+      var x = table.childNodes[0].childNodes[i].insertCell(0);
+      x.innerHTML=(i==0)?" ":"<b>" + (i - 1 + startRow) + "</b>"
+    }
   }
+  
 
 
 
