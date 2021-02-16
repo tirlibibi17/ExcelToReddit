@@ -99,7 +99,7 @@ document.querySelector('#copy').onclick = function () {
   
     for (var i=0;i<numCols;i++) {
       console.log(i)
-      row.innerHTML+="<td><b>"+columnLetters[columnIndex + i]+"</b></td>"
+      row.innerHTML+="<td><b>"+columnLetters[startColumnIndex + i]+"</b></td>"
     }
   
     for (var i=0;i<table.childNodes[0].childElementCount;i++) {
