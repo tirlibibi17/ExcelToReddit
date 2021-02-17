@@ -105,7 +105,7 @@ document.querySelector('#copy').onclick = function () {
     for (var i=0;i<table.childNodes[0].childElementCount;i++) {
       // Insert row number column
       var x = table.childNodes[0].childNodes[i].insertCell(0);
-      x.innerHTML=(i==0)?" ":"<b>" + (i - 1 + startRow) + "</b>"
+      x.innerHTML=(i==0)?"+":"<b>" + (i - 1 + startRow) + "</b>"
     }
   }
   
