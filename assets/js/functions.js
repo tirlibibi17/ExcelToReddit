@@ -18,7 +18,7 @@ function copyFormatted (rtjson, html) {
 
   // Create an iframe (isolated container) for the HTML
   var container = document.getElementById("container")
-  container.innerHTML=""
+  container.innerHTML="&nbsp;"
   var divToCopy = document.createElement('div')
   divToCopy.id = "CopyDIV"
   
