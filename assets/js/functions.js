@@ -22,7 +22,7 @@ function copyFormatted (rtjson, html) {
   var divToCopy = document.createElement('div')
   divToCopy.id = "CopyDIV"
   
-  divToCopy.setAttribute("data-reddit-rtjson", rtjson)
+  //divToCopy.setAttribute("data-reddit-rtjson", rtjson)
   
   divToCopy.innerHTML = html
   
