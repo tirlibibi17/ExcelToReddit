@@ -92,14 +92,16 @@ document.querySelector('#copy').onclick = function () {
     var row = table.insertRow(0);
     row.innerHTML=""
   
+    // Get address of upper left cell
     upperLeftCell = document.getElementById("cellAddress").value.toUpperCase();
     startColumn = upperLeftCell.match(/[A-Z]+/);
     startColumnIndex = columnLetters.indexOf(startColumn[0]);
     startRow = upperLeftCell.match(/[0-9]+/)[0]*1
   
+    // Add column letters as headers
     for (var i=0;i<numCols;i++) {
       console.log(i)
-      row.innerHTML+="<td><b>"+columnLetters[startColumnIndex + i]+"</b></td>"
+      row.innerHTML+="<th><b>"+columnLetters[startColumnIndex + i]+"</b></th>"
     }
   
     for (var i=0;i<table.childNodes[0].childElementCount;i++) {
