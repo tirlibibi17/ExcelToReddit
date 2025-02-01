@@ -299,6 +299,25 @@ if __name__ == '__main__':
 
     def test_SimpleGetPutHtml():
         data = "<p>Writing to the clipboard is <strong>easy</strong> with this code.</p>"
+        data = """<div>
+	<table>
+		<tbody>
+			<tr>
+				<th>+</th>
+				<th>
+					<b>A</b>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<b>1</b>
+				</td>
+				<td>1</td>
+			</tr>
+		</tbody>
+	</table></div>
+    """
+        
         PutHtml(data)
         if GetHtml() == data:
             print("passed")
