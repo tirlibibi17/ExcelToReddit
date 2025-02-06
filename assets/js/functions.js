@@ -144,9 +144,9 @@ document.querySelector('#copy').onclick = function () {
     return tempContainer.innerHTML;
 }
 
-let contents = convertFirstRowToTh(contents);
+let contents_th. = convertFirstRowToTh(contents);
 
-  copyFormatted(result, contents)
+  copyFormatted(result, contents_th)
 }
 
 // Create nice animation on refresh button click
