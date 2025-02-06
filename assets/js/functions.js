@@ -123,8 +123,14 @@ document.querySelector('#copy').onclick = function () {
   
   contents = "<table>" + table.innerHTML + "</table>" 
 
-  function convertFirstRowToTh(tableElement) {
-    let firstRow = tableElement.querySelector("tr"); // Get the first row
+
+  function convertFirstRowToTh(tableHtml) {
+    // Create a temporary container to manipulate the HTML
+    let tempContainer = document.createElement("div");
+    tempContainer.innerHTML = tableHtml; // Load the table HTML
+
+    // Select the first row
+    let firstRow = tempContainer.querySelector("tr");
 
     if (firstRow) {
         firstRow.querySelectorAll("td").forEach(td => {
@@ -133,10 +139,12 @@ document.querySelector('#copy').onclick = function () {
             td.replaceWith(th); // Replace <td> with <th>
         });
     }
+
+    // Return the modified HTML as a string
+    return tempContainer.innerHTML;
 }
 
-// Example usage
-  convertFirstRowToTh(contents);
+let contents = convertFirstRowToTh(contents);
 
   copyFormatted(result, contents)
 }
