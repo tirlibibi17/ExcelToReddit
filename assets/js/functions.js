@@ -133,7 +133,6 @@ document.querySelector('#copy').onclick = function () {
           // Create a new <th> element
           let th = document.createElement("th");
           th.innerHTML = td.innerHTML; // Copy content
-          th.setAttribute("scope", "col"); // Optional: Add scope attribute
           
           // Replace <td> with <th>
           td.parentNode.replaceChild(th, td);
