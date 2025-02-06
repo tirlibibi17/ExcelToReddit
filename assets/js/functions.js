@@ -123,21 +123,20 @@ document.querySelector('#copy').onclick = function () {
   
   contents = "<table>" + table.innerHTML + "</table>" 
 
-  // Replace first row <td> elements with <th>
-  let firstRow = contents.querySelector("tr");
+  function convertFirstRowToTh(tableElement) {
+    let firstRow = tableElement.querySelector("tr"); // Get the first row
 
-  if (firstRow) {
-      let tdElements = firstRow.querySelectorAll("td");
+    if (firstRow) {
+        firstRow.querySelectorAll("td").forEach(td => {
+            let th = document.createElement("th");
+            th.innerHTML = td.innerHTML; // Copy content
+            td.replaceWith(th); // Replace <td> with <th>
+        });
+    }
+}
 
-      tdElements.forEach(td => {
-          // Create a new <th> element
-          let th = document.createElement("th");
-          th.innerHTML = td.innerHTML; // Copy content
-          
-          // Replace <td> with <th>
-          td.parentNode.replaceChild(th, td);
-      });
-  }
+// Example usage
+  convertFirstRowToTh(contents);
 
   copyFormatted(result, contents)
 }
