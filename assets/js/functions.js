@@ -144,7 +144,7 @@ document.querySelector('#copy').onclick = function () {
     return tempContainer.innerHTML;
 }
 
-let contents_th. = convertFirstRowToTh(contents);
+let contents_th = convertFirstRowToTh(contents);
 
   copyFormatted(result, contents_th)
 }
