@@ -123,6 +123,23 @@ document.querySelector('#copy').onclick = function () {
   
   contents = "<table>" + table.innerHTML + "</table>" 
 
+  // Replace first row <td> elements with <th>
+  let firstRow = contents.querySelector("tr");
+
+  if (firstRow) {
+      let tdElements = firstRow.querySelectorAll("td");
+
+      tdElements.forEach(td => {
+          // Create a new <th> element
+          let th = document.createElement("th");
+          th.innerHTML = td.innerHTML; // Copy content
+          th.setAttribute("scope", "col"); // Optional: Add scope attribute
+          
+          // Replace <td> with <th>
+          td.parentNode.replaceChild(th, td);
+      });
+  }
+
   copyFormatted(result, contents)
 }
 
