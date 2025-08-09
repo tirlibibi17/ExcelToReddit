@@ -114,14 +114,14 @@ document.querySelector('#copy').onclick = function() {
                 const rows = inputText.trim().split(/\s*\|\|\s*\|\s*/);
 
                 // Create the table HTML structure
-                let tableHTML = '<table">';
+                let tableHTML = '<table>';
 
                 // Loop through each row
                 rows.forEach(row => {
                     const cells = row.split(/\|/); // Split by columns
                     tableHTML += '<tr>'; // Start a new row
                     cells.forEach(cell => {
-                        tableHTML += `<td">${cell.trim()}</td>`; // Add each cell
+                        tableHTML += `<td>${cell.trim()}</td>`; // Add each cell
                     });
                     tableHTML += '</tr>'; // End the row
                 });
