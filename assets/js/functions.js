@@ -95,19 +95,33 @@ document.querySelector('#copy').onclick = function() {
         // Check if the clipboard contains a broken Excel range paste
         const pattern = /(<p>)?\|\| \|\| \|.*$/;
         if (pattern.test(contents.trim())) {
+			function convertToTable(contents) {
+			  // Split the string by '|', remove empty elements and whitespace
+			  const rows = contents.split('|').filter(item => item.trim() !== '').map(item => item.trim());
+
+			  // Convert to a 2D array (rows of data)
+			  const tableData = [];
+			  for (let i = 0; i < rows.length; i += 4) {
+				tableData.push(rows.slice(i, i + 4)); // Group the data in chunks of 4 (one row)
+			  }
+
+			  // Return the 2D array as a table
+			  return tableData;
+			}
+
             function convertToHTMLTable(inputText) {
                 // Split the input text by rows (using newline as a separator)
                 const rows = inputText.trim().split(/\s*\|\|\s*\|\s*/);
 
                 // Create the table HTML structure
-                let tableHTML = '<table border="1" style="border-collapse: collapse;">';
+                let tableHTML = '<table">';
 
                 // Loop through each row
                 rows.forEach(row => {
                     const cells = row.split(/\|/); // Split by columns
                     tableHTML += '<tr>'; // Start a new row
                     cells.forEach(cell => {
-                        tableHTML += `<td style="padding: 5px;">${cell.trim()}</td>`; // Add each cell
+                        tableHTML += `<td">${cell.trim()}</td>`; // Add each cell
                     });
                     tableHTML += '</tr>'; // End the row
                 });
@@ -115,7 +129,7 @@ document.querySelector('#copy').onclick = function() {
                 tableHTML += '</table>'; // Close the table
                 return tableHTML;
             }
-            html = convertToHTMLTable(contents);
+            html = convertToTable(contents);
 
 			// Create a temporary container to manipulate the HTML
 			let tableContainer = document.createElement("div");
