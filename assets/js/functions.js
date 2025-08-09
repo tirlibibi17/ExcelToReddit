@@ -97,11 +97,11 @@ document.querySelector('#copy').onclick = function() {
         if (pattern.test(contents.trim())) {
             function convertToHTMLTable(inputText) {
 				// Remove leading '<p>|| ||'
-				inputText = inputText.replace('(?:<p>)?\|\| \|\|(.*)(?:<\/p>)','$1');
-				console.log(inputText);
+				trimmedInputText = inputText.replace('(?:\s*<p>)?\|\| \|\|(.*)(?:<\/p>\s*)','$1');
+				console.log(trimmedInputText);
 				
                 // Split the input text by rows (using newline as a separator)
-                const rows = inputText.trim().split(/\|\s\|/);
+                const rows = trimmedInputText.split(/\|\s\|/);
 
                 // Create the table HTML structure
                 let tableHTML = '<table>';
