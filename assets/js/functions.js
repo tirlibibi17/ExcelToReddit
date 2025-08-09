@@ -110,6 +110,9 @@ document.querySelector('#copy').onclick = function() {
 			}
 
             function convertToHTMLTable(inputText) {
+				// Remove leading '|| ||'
+				inputText = inputText.replace('\|\| \|\|','');
+				
                 // Split the input text by rows (using newline as a separator)
                 const rows = inputText.trim().split(/\|\s\|/);
 
