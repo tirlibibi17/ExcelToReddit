@@ -130,7 +130,7 @@ document.querySelector('#copy').onclick = function() {
 				console.log(tableHTML);
                 return tableHTML;
             }
-            html = convertToTable(contents);
+            html = convertToHTMLTable(contents);
 
 			// Create a temporary container to manipulate the HTML
 			let tableContainer = document.createElement("div");
