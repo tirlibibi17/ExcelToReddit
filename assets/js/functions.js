@@ -93,11 +93,11 @@ document.querySelector('#copy').onclick = function() {
     if (!table) {
         console.log(contents);
         // Check if the clipboard contains a broken Excel range paste
-        const pattern = /(<p>)?\|\| \|\| \|.*$/;
+        const pattern = /.*\|\| \|\| \|[^|]*?/;
         if (pattern.test(contents.trim())) {
             function convertToHTMLTable(inputText) {
 				// Remove leading '<p>|| ||'
-				trimmedInputText = inputText.replace(/(?:\s*<p>)?\|\| \|\| \|(.*) \|\s*(?:<\/p>\s*)/,'$1');
+				trimmedInputText = inputText.replace(/^.*\|\| \|\| \|(.*) \|[^|]*?$/,'$1');
 				console.log(trimmedInputText);
 				
                 // Split the input text by rows (using newline as a separator)
