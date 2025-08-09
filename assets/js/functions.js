@@ -91,8 +91,34 @@ document.querySelector('#copy').onclick = function () {
   table = div.getElementsByTagName("table")[0]
 
   if (!table) {
-	  alert("No table found")
-	  return 
+	  // Check if the clipboard contains a broken Excel range paste
+	  const pattern = /^(\|(\d+\|)+\s*)+$/;
+	  if pattern.test(contents.trim()) {
+		  function convertToHTMLTable(inputText) {
+		  	  // Split the input text by rows (using newline as a separator)
+			  const rows = inputText.trim().split(/\s*\|\|\s*\|\s*/);
+
+			  // Create the table HTML structure
+			  let tableHTML = '<table border="1" style="border-collapse: collapse;">';
+
+			  // Loop through each row
+			  rows.forEach(row => {
+				  const cells = row.split(/\|/); // Split by columns
+				  tableHTML += '<tr>'; // Start a new row
+				  cells.forEach(cell => {
+					  tableHTML += `<td style="padding: 5px;">${cell.trim()}</td>`; // Add each cell
+				  });
+				  tableHTML += '</tr>'; // End the row
+			  });
+
+			  tableHTML += '</table>'; // Close the table
+			  return tableHTML;
+		  }
+		  table = convertToHTMLTable(contents);
+	  } else {
+		  alert("No table found")
+		  return
+	  }
   }
 
   if (document.getElementById("rowsAndColumns").checked) {
