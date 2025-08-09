@@ -93,7 +93,7 @@ document.querySelector('#copy').onclick = function () {
   if (!table) {
 	  console.log(contents);
 	  // Check if the clipboard contains a broken Excel range paste
-	  const pattern = /^\|\| \|\| \|.*$/;
+	  const pattern = /(<p>)?\|\| \|\| \|.*$/;
 	  if (pattern.test(contents.trim())) {
 		  function convertToHTMLTable(inputText) {
 		  	  // Split the input text by rows (using newline as a separator)
