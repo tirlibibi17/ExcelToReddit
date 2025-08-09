@@ -215,7 +215,7 @@ document.addEventListener('copy', function(e) {
         // Insert row number column
         var formatting = '';
         for (var j = 0; j < trList.childNodes[i].childElementCount; j++) {
-            textString += '|' + trList.childNodes[i].childNodes[j].innerText.replace(/([\[\]\*\^\`\~])/g, '\\$1');
+            textString += '|' + (j==0?'**':'') + trList.childNodes[i].childNodes[j].innerText.replace(/([\[\]\*\^\`\~])/g, '\\$1') + (j==0?'**':'');
             formatting += '|:-'; // align left
         }
         textString += '|\n';
