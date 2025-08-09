@@ -127,6 +127,7 @@ document.querySelector('#copy').onclick = function() {
                 });
 
                 tableHTML += '</table>'; // Close the table
+				console.log(tableHTML);
                 return tableHTML;
             }
             html = convertToTable(contents);
