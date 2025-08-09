@@ -111,7 +111,6 @@ document.querySelector('#copy').onclick = function() {
 
             function convertToHTMLTable(inputText) {
                 // Split the input text by rows (using newline as a separator)
-				inputText = inputText.replace(
                 const rows = inputText.trim().split(/\|\s\|/);
 
                 // Create the table HTML structure
