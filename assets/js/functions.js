@@ -108,6 +108,7 @@ document.querySelector('#copy').onclick = function() {
 
                 // Loop through each row
                 rows.forEach(row => {
+					console.log(row);
                     const cells = row.split(/\|/); // Split by columns
                     tableHTML += '<tr>'; // Start a new row
                     cells.forEach(cell => {
