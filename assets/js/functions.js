@@ -91,14 +91,12 @@ document.querySelector('#copy').onclick = function() {
     table = div.getElementsByTagName("table")[0]
 
     if (!table) {
-        console.log(contents);
         // Check if the clipboard contains a broken Excel range paste
         const pattern = /.*\|\| \|\| \|[^|]*?/;
         if (pattern.test(contents.trim())) {
             function convertToHTMLTable(inputText) {
 				// Remove leading '<p>|| ||'
 				trimmedInputText = inputText.replace(/^.*\|\| \|\| \|(.*) \|[^|]*?$/,'$1');
-				console.log(trimmedInputText);
 				
                 // Split the input text by rows (using newline as a separator)
                 const rows = trimmedInputText.split(/\|\s\|/);
@@ -108,7 +106,6 @@ document.querySelector('#copy').onclick = function() {
 
                 // Loop through each row
                 rows.forEach(row => {
-					console.log(row);
                     const cells = row.split(/\|/); // Split by columns
                     tableHTML += '<tr>'; // Start a new row
                     cells.forEach(cell => {
@@ -118,7 +115,6 @@ document.querySelector('#copy').onclick = function() {
                 });
 
                 tableHTML += '</table>'; // Close the table
-				console.log(tableHTML);
                 return tableHTML;
             }
             html = convertToHTMLTable(contents);
@@ -132,8 +128,6 @@ document.querySelector('#copy').onclick = function() {
             return
         }
     }
-
-    console.log(table);
 
 	// Insert row numbers and column headings?
     if (document.getElementById("rowsAndColumns").checked) {
