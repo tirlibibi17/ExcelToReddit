@@ -115,7 +115,15 @@ document.querySelector('#copy').onclick = function () {
 			  tableHTML += '</table>'; // Close the table
 			  return tableHTML;
 		  }
-		  table = convertToHTMLTable(contents);
+		  html = convertToHTMLTable(contents);
+		  
+		  // Create a new DOMParser instance
+          parser = new DOMParser();
+
+          // Parse the HTML string into a document object
+          doc = parser.parseFromString(html, 'text/html');
+		  
+		  table = doc.querySelector('table');
 	  } else {
 		  alert("No table found")
 		  return
