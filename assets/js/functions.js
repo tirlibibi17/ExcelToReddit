@@ -97,7 +97,7 @@ document.querySelector('#copy').onclick = function() {
         if (pattern.test(contents.trim())) {
             function convertToHTMLTable(inputText) {
 				// Remove leading '<p>|| ||'
-				inputText = inputText.replace('.*\|\| \|\|','');
+				inputText = inputText.replace('(<p>)?\|\| \|\|','');
 				
                 // Split the input text by rows (using newline as a separator)
                 const rows = inputText.trim().split(/\|\s\|/);
