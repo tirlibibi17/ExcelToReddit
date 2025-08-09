@@ -79,7 +79,7 @@ function copyFormatted (rtjson, html) {
 
   for (var i = 0; i < activeSheets.length; i++) activeSheets[i].disabled = false
 }
-s
+
 columnLetters = generateExcelColumns()
 
 // Create nice animation on copy button click
