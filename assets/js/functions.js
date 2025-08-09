@@ -95,23 +95,9 @@ document.querySelector('#copy').onclick = function() {
         // Check if the clipboard contains a broken Excel range paste
         const pattern = /(<p>)?\|\| \|\| \|.*$/;
         if (pattern.test(contents.trim())) {
-			function convertToTable(contents) {
-			  // Split the string by '|', remove empty elements and whitespace
-			  const rows = contents.split('|').filter(item => item.trim() !== '').map(item => item.trim());
-
-			  // Convert to a 2D array (rows of data)
-			  const tableData = [];
-			  for (let i = 0; i < rows.length; i += 4) {
-				tableData.push(rows.slice(i, i + 4)); // Group the data in chunks of 4 (one row)
-			  }
-
-			  // Return the 2D array as a table
-			  return tableData;
-			}
-
             function convertToHTMLTable(inputText) {
-				// Remove leading '|| ||'
-				inputText = inputText.replace('\|\| \|\|','');
+				// Remove leading '<p>|| ||'
+				inputText = inputText.replace('.*\|\| \|\|','');
 				
                 // Split the input text by rows (using newline as a separator)
                 const rows = inputText.trim().split(/\|\s\|/);
