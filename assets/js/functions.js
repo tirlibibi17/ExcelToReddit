@@ -91,6 +91,7 @@ document.querySelector('#copy').onclick = function () {
   table = div.getElementsByTagName("table")[0]
 
   if (!table) {
+	  console.log(contents);
 	  // Check if the clipboard contains a broken Excel range paste
 	  const pattern = /^\|\| \|\| \|.*$/;
 	  if (pattern.test(contents.trim())) {
