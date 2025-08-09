@@ -121,6 +121,8 @@ document.querySelector('#copy').onclick = function () {
 		  return
 	  }
   }
+  
+  console.log(table);
 
   if (document.getElementById("rowsAndColumns").checked) {
     // insert columns
