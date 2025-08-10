@@ -115,6 +115,7 @@ document.querySelector('#copy').onclick = function() {
                 });
 
                 tableHTML += '</table>'; // Close the table
+				editor.setData(tableHTML);
                 return tableHTML;
             }
             html = convertToHTMLTable(contents);
@@ -231,7 +232,7 @@ document.addEventListener('copy', function(e) {
     data.setData('text/plain', textString);
     data.setData('text/html', htmlString + htmlFooter);
     e.preventDefault();
-	editor.setData(htmlString);
+//	editor.setData(htmlString);
 });
 
 function tableToJson(table) {
