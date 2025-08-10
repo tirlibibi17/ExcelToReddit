@@ -198,6 +198,18 @@ document.querySelector('#refresh').onclick = function() {
     this.parentNode.appendChild(animatedClone)
 
     var contents = window.editor.setData("")
+	// Add message popup
+	const popup = document.getElementById('popup');
+	
+	this.addEventListener('click', () => {
+      // Show popup
+      popup.style.display = 'block';
+
+      // Hide after 5 seconds
+      setTimeout(() => {
+        popup.style.display = 'none';
+      }, 5000);
+    });
 }
 
 ///////////////////// End copy formatted code from https://jsfiddle.net/Loilo/xymhgLjc/4/
