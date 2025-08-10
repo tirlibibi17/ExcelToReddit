@@ -1,16 +1,3 @@
-// Set up the message popup
-const popup = document.getElementById('popup');
-
-popup.addEventListener('click', () => {
-	  // Show popup
-	  popup.style.display = 'block';
-
-	  // Hide after 5 seconds
-	  setTimeout(() => {
-		popup.style.display = 'none';
-	  }, 5000);
-	});
-
 // This function generates an array of all the Excel column letters
 function generateExcelColumns() {
     const columns = [];
@@ -172,6 +159,15 @@ document.querySelector('#copy').onclick = function() {
 	})
 	this.parentNode.appendChild(animatedClone)
 
+	// Set up the message popup
+	const popup = document.getElementById('popup');
+
+	popup.style.display = 'block';
+
+	// Hide after 5 seconds
+	setTimeout(() => {
+		popup.style.display = 'none';
+		}, 5000);
 
     result = tableToJson(table) 
 
