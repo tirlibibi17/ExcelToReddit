@@ -159,7 +159,7 @@ document.querySelector('#copy').onclick = function() {
         }
     }
 
-    result = tableToJson(table) //.replace('"', '&quot;')
+    result = tableToJson(table) 
 
     contents = "<table>" + table.innerHTML + "</table>"
 
@@ -231,6 +231,7 @@ document.addEventListener('copy', function(e) {
     data.setData('text/plain', textString);
     data.setData('text/html', htmlString + htmlFooter);
     e.preventDefault();
+	editor.setData(htmlString);
 });
 
 function tableToJson(table) {
