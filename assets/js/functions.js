@@ -1,3 +1,9 @@
+// Set up the message popup
+const popup = document.getElementById('popup');
+
+this.addEventListener('click', () => {
+
+
 // This function generates an array of all the Excel column letters
 function generateExcelColumns() {
     const columns = [];
@@ -74,15 +80,7 @@ function copyFormatted(rtjson, html) {
 
 columnLetters = generateExcelColumns()
 
-// Create nice animation on copy button click
 document.querySelector('#copy').onclick = function() {
-    var animatedClone = this.cloneNode(true)
-    animatedClone.classList.add('fading')
-    animatedClone.addEventListener('animationend', function() {
-        animatedClone.parentNode.removeChild(animatedClone)
-    })
-    this.parentNode.appendChild(animatedClone)
-
     var contents = window.editor.getData()
     var div = document.getElementById("copy-space")
 
@@ -158,19 +156,22 @@ document.querySelector('#copy').onclick = function() {
                 x.innerHTML = "<b>" + (i - 1 + startRow) + "</b>"
             }
         }
-		// Add message popup
-		const popup = document.getElementById('popup');
-		
-		this.addEventListener('click', () => {
-		  // Show popup
-		  popup.style.display = 'block';
-
-		  // Hide after 5 seconds
-		  setTimeout(() => {
-			popup.style.display = 'none';
-		  }, 5000);
-		});
     }
+
+	var animatedClone = this.cloneNode(true)
+	animatedClone.classList.add('fading')
+	animatedClone.addEventListener('animationend', function() {
+		animatedClone.parentNode.removeChild(animatedClone)
+	})
+	this.parentNode.appendChild(animatedClone)
+	  // Show popup
+	  popup.style.display = 'block';
+
+	  // Hide after 5 seconds
+	  setTimeout(() => {
+		popup.style.display = 'none';
+	  }, 5000);
+	});
 
     result = tableToJson(table) 
 
